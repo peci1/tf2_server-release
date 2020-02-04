@@ -1,3 +1,26 @@
+## tf2_server (melodic) - 1.0.4-1
+
+The packages in the `tf2_server` repository were released into the `melodic` distro by running `/usr/bin/bloom-release -t melodic --ros-distro melodic tf2_server` on `Tue, 04 Feb 2020 13:03:59 -0000`
+
+The `tf2_server` package was released.
+
+Version of package(s) in repository `tf2_server`:
+
+- upstream repository: https://github.com/peci1/tf2_server.git
+- release repository: https://github.com/peci1/tf2_server-release.git
+- rosdistro version: `1.0.3-1`
+- old version: `1.0.3-1`
+- new version: `1.0.4-1`
+
+Versions of tools used:
+
+- bloom version: `0.9.0`
+- catkin_pkg version: `0.4.16`
+- rosdep version: `0.18.0`
+- rosdistro version: `0.8.0`
+- vcstools version: `0.1.42`
+
+
 ## tf2_server (melodic) - 1.0.3-1
 
 The packages in the `tf2_server` repository were released into the `melodic` distro by running `/usr/bin/bloom-release -t melodic --ros-distro melodic tf2_server` on `Tue, 21 Jan 2020 14:54:34 -0000`
