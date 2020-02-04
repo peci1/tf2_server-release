@@ -1,0 +1,31 @@
+ros-melodic-tf2-server (1.0.4-1bionic) bionic; urgency=high
+
+  * Added a parameter that can help distinguishing between the original and the upgraded TF2 server.
+  * Added support for running the server as nodelet.
+  * Added support for updating the requested subtree during runtime.
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Mon, 03 Feb 2020 23:00:00 -0000
+
+ros-melodic-tf2-server (1.0.3-1bionic) bionic; urgency=high
+
+  * Create LICENSE
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Mon, 20 Jan 2020 23:00:00 -0000
+
+ros-melodic-tf2-server (1.0.2-1bionic) bionic; urgency=high
+
+  * Added url tags to package.xml
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Thu, 09 Jan 2020 23:00:00 -0000
+
+ros-melodic-tf2-server (1.0.1-1bionic) bionic; urgency=high
+
+  * Initial version
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Thu, 09 Jan 2020 23:00:00 -0000
+
+
