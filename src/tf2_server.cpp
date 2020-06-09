@@ -37,7 +37,7 @@ TF2Server::TF2Server(ros::NodeHandle& nh, ros::NodeHandle& pnh) : nh(nh), pnh(pn
   std::string node_name;
   if (use_node_namespace)
   {
-    node_name = ros::this_node::getName();
+    node_name = this->pnh.getNamespace();
   }
   else
   {
@@ -172,17 +172,21 @@ bool operator!=(const tf2_msgs::TFMessage& lhs, const tf2_msgs::TFMessage& rhs)
 bool TF2Server::onRequestTransformStream(RequestTransformStreamRequest &req,
                                          RequestTransformStreamResponse &resp)
 {
-  std::lock_guard<std::mutex> lock(this->mutex);
+  TopicsSpec topics;
+  {
+    std::lock_guard<std::mutex> streamsLock(this->streamsMutex);
 
-  const auto topics = this->getTopicsNames(req);
+    topics = this->getTopicsNames(req);
+    if (topics.first.empty() || topics.second.empty())
+      return false;
+
+    this->streams[topics] = req;
+  }
 
   const auto topicName = resp.topic_name = topics.first;
   const auto staticTopicName = resp.static_topic_name = topics.second;
 
-  if (topicName.empty() || staticTopicName.empty())
-    return false;
-
-  this->streams[topics] = req;
+  std::lock_guard<std::mutex> lock(this->mutex);
 
   if (this->frames.find(req) == this->frames.end())
   {
@@ -440,6 +444,11 @@ std::unique_ptr<TF2Server::FramesList> TF2Server::getFramesList(const RequestTra
         {
           this->buffer->_chainAsVector(frame, ros::Time(0), req.parent_frame, ros::Time(0), req.parent_frame, chainFrames);
         }
+        catch (tf2::ExtrapolationException& e)
+        {
+          // the frame is stale, ignore it
+          continue;
+        }
         catch (tf2::TransformException& e)
         {
           ROS_ERROR("Error while searching TF tree: %s", e.what());
@@ -497,7 +506,7 @@ void TF2Server::updateFramesLists()
 
 void TF2Server::onSubscriberConnected(const TopicsSpec& topics)
 {
-  std::lock_guard<std::mutex> lock(this->mutex);
+  std::lock_guard<std::mutex> lock(this->subscriberMutex);
 
   this->subscriberNumbers[topics] = this->subscriberNumbers[topics] + 1;
   if (this->subscriberNumbers[topics] == 1)
@@ -508,7 +517,7 @@ void TF2Server::onSubscriberConnected(const TopicsSpec& topics)
 
 void TF2Server::onSubscriberDisconnected(const TopicsSpec& topics)
 {
-  std::lock_guard<std::mutex> lock(this->mutex);
+  std::lock_guard<std::mutex> lock(this->subscriberMutex);
 
   this->subscriberNumbers[topics] = this->subscriberNumbers[topics] - 1;
   if (this->subscriberNumbers[topics] == 0)

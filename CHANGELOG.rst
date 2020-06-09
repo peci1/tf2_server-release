@@ -2,6 +2,14 @@
 Changelog for package tf2_server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.0.6 (2020-06-09)
+------------------
+* Minor: catkin_lint.
+* Fix: prevent deadlocks on stopping timers.
+* Fix: Ignore stale frames in subtree search.
+* Fix: Fix nodelet namespace.
+* Contributors: Martin Pecka
+
 1.0.5 (2020-02-09)
 ------------------
 * Added support for streams whose TF tree can be updated during runtime.
