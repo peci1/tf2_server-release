@@ -2,6 +2,24 @@
 Changelog for package tf2_server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.1 (2022-06-08)
+------------------
+* Fixed Noetic CI
+* Disable Noetic CI
+* Contributors: Martin Pecka
+
+1.1.0 (2022-06-08)
+------------------
+* Noetic compatibility
+* Improved readme.
+* Added CI status badge.
+* Fixed a race condition when creating streams (if the timer were created later than onSubscribe() is called.
+* Update README.md
+  (cherry picked from commit 3253416eff8f88330411ec8732b4cacd612923a8)
+* Add CI via Github Actions
+  (cherry picked from commit a60dcad82e19caebd6481c6c2af96e6cfbe3a57c)
+* Contributors: Martin Pecka
+
 1.0.6 (2020-06-09)
 ------------------
 * Minor: catkin_lint.

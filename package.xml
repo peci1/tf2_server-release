@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<package format="2">
+<package format="3">
   <name>tf2_server</name>
-  <version>1.0.6</version>
+  <version>1.1.1</version>
   <description>TF2 server that can provide transforms over separate TF topics</description>
 
   <maintainer email="peckama2@fel.cvut.cz">Martin Pecka</maintainer>
@@ -14,6 +14,9 @@
   <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend condition="$ROS_PYTHON_VERSION == 2">python-setuptools</buildtool_depend>
+  <buildtool_depend condition="$ROS_PYTHON_VERSION == 3">python3-setuptools</buildtool_depend>
+
   <depend>geometry_msgs</depend>
   <depend>nodelet</depend>
   <depend>roscpp</depend>
@@ -31,6 +34,7 @@
   <test_depend>tf</test_depend>
 
   <export>
-    <nodelet plugin="${prefix}/tf2_server_plugins.xml" />
+    <nodelet plugin="${prefix}/tf2_server_nodelets.xml" />
+    <nodelet plugin="${prefix}/tf2_server_test_nodelets.xml" />
   </export>
 </package>
