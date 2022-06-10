@@ -1,3 +1,26 @@
+## tf2_server (noetic) - 1.1.2-1
+
+The packages in the `tf2_server` repository were released into the `noetic` distro by running `/usr/bin/bloom-release -r noetic tf2_server` on `Fri, 10 Jun 2022 06:40:46 -0000`
+
+The `tf2_server` package was released.
+
+Version of package(s) in repository `tf2_server`:
+
+- upstream repository: https://github.com/peci1/tf2_server.git
+- release repository: https://github.com/peci1/tf2_server-release.git
+- rosdistro version: `1.1.1-1`
+- old version: `1.1.1-1`
+- new version: `1.1.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.11.1`
+- catkin_pkg version: `0.5.2`
+- rosdep version: `0.21.0`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## tf2_server (noetic) - 1.1.1-1
 
 The packages in the `tf2_server` repository were released into the `noetic` distro by running `/usr/local/bin/bloom-release --track noetic -r noetic tf2_server` on `Wed, 08 Jun 2022 01:46:38 -0000`
