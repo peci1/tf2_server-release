@@ -1,0 +1,86 @@
+ros-noetic-tf2-server (1.1.3-1focal) focal; urgency=high
+
+  * Fixed errors printed by pluginlib when tf2_server is installed
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Tue, 09 Jan 2024 23:00:00 -0000
+
+ros-noetic-tf2-server (1.1.2-1focal) focal; urgency=high
+
+  * Try to de-flake test.
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Thu, 09 Jun 2022 22:00:00 -0000
+
+ros-noetic-tf2-server (1.1.1-1focal) focal; urgency=high
+
+  * Fixed Noetic CI
+  * Disable Noetic CI
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Tue, 07 Jun 2022 22:00:00 -0000
+
+ros-noetic-tf2-server (1.1.0-1focal) focal; urgency=high
+
+  * Noetic compatibility
+  * Improved readme.
+  * Added CI status badge.
+  * Fixed a race condition when creating streams (if the timer were created later than onSubscribe() is called.
+  * Update README.md
+    (cherry picked from commit 3253416eff8f88330411ec8732b4cacd612923a8)
+  * Add CI via Github Actions
+    (cherry picked from commit a60dcad82e19caebd6481c6c2af96e6cfbe3a57c)
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Tue, 07 Jun 2022 22:00:00 -0000
+
+ros-noetic-tf2-server (1.0.6-1focal) focal; urgency=high
+
+  * Minor: catkin_lint.
+  * Fix: prevent deadlocks on stopping timers.
+  * Fix: Ignore stale frames in subtree search.
+  * Fix: Fix nodelet namespace.
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Mon, 08 Jun 2020 22:00:00 -0000
+
+ros-noetic-tf2-server (1.0.5-1focal) focal; urgency=high
+
+  * Added support for streams whose TF tree can be updated during runtime.
+  * Added support for initial streams.
+  * Added possibility to specify desired names of the published transform streams.
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Sat, 08 Feb 2020 23:00:00 -0000
+
+ros-noetic-tf2-server (1.0.4-1focal) focal; urgency=high
+
+  * Added a parameter that can help distinguishing between the original and the upgraded TF2 server.
+  * Added support for running the server as nodelet.
+  * Added support for updating the requested subtree during runtime.
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Mon, 03 Feb 2020 23:00:00 -0000
+
+ros-noetic-tf2-server (1.0.3-1focal) focal; urgency=high
+
+  * Create LICENSE
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Mon, 20 Jan 2020 23:00:00 -0000
+
+ros-noetic-tf2-server (1.0.2-1focal) focal; urgency=high
+
+  * Added url tags to package.xml
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Thu, 09 Jan 2020 23:00:00 -0000
+
+ros-noetic-tf2-server (1.0.1-1focal) focal; urgency=high
+
+  * Initial version
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Thu, 09 Jan 2020 23:00:00 -0000
+
+
